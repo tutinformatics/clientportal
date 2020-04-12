@@ -1,56 +1,65 @@
 <template>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <require from="fomantic-ui/semantic.min.css"></require>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
+  <style type="text/css">
+    body {
+      background-color: #FFFFFF;
+    }
+    .ui.menu .item img.logo {
+      margin-right: 1.5em;
+    }
+    .ui.fixed.inverted.menu{
+      margin-left: 6em;
+    }
+    .main.container {
+      margin-top: 7em;
+    }
+    .wireframe {
+      margin-top: 2em;
+    }
+    .ui.footer.segment {
+      margin: 5em 0em 0em;
+      padding: 5em 0em;
+    }
+  </style>
+
+  <div class="ui fixed inverted menu">
+    <!-- <div class="ui container"> -->
+      <a href="#" class="header item">
+        Project Name
+      </a>
+      <a href="#" class="item">Home</a>
+      <div class="ui simple dropdown item">
+        Dropdown <i class="dropdown icon"></i>
+        <div class="menu">
+          <a class="item" href="#">Link Item</a>
+          <a class="item" href="#">Link Item</a>
+          <div class="divider"></div>
+          <div class="header">Header Item</div>
+          <div class="item">
+            <i class="dropdown icon"></i>
+            Sub Menu
+            <div class="menu">
+              <a class="item" href="#">Link Item</a>
+              <a class="item" href="#">Link Item</a>
+            </div>
           </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </div>
-  </nav>
-  <div class="container-fluid">
-    <div class="row">
-      <!-- Sidebar -->
-      <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-        <div class="sidebar-sticky">
-          <ul class="nav flex-column" repeat.for="nav of router.routes">
-            <li class="nav-item ${nav.isActive ? 'active' : ''}"><a class="nav-link" route-href.bind="nav.name">${ nav.title }</a></li>
-          </ul>
+          <a class="item" href="#">Link Item</a>
         </div>
-      </nav>
-      <!-- Wrapper -->
-      <div class="col-md-9 ml-sm-auto col-lg-10 px-4 pt-4 mt-4">
-        <main role="main">
-          <router-view></router-view>
-        </main>
-      </div>
+      <!-- </div> -->
+    </div>
+  </div>
+
+  <div class="ui left demo vertical inverted sidebar visible labeled icon menu">
+      <a class="item ${nav.isActive ? 'active' : ''}" route-href.bind="nav.name" repeat.for="nav of router.routes">
+        <i class="${nav.settings.data} icon"></i>
+        ${ nav.title }
+      </a>
+  </div>
+
+  <div class="pusher">
+    <div class="ui main container">
+      <router-view></router-view>
     </div>
   </div>
 </template>

@@ -9,6 +9,16 @@
     "valueConverters": "resources/value-converters",
     "bindingBehaviors": "resources/binding-behaviors"
   },
+  "dependencies": [
+    {
+      "name": "fomantic-ui",
+      "path": "../node_modules/fomantic-ui/dist",
+      "main": "semantic.min.js",
+      "resources": [
+        "semantic.min.css"
+      ]
+    }
+  ],
   "transpiler": {
     "id": "babel",
     "fileExtension": ".js"
