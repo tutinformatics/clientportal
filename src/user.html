@@ -5,8 +5,13 @@
   <table class="ui celled table">
     <tbody>
     <tr>
-      <td><b>Name</b></td>
+      <td><b>First Name</b></td>
       <td>${users.person.firstName}</td>
+      <td><a href="">Change</a></td>
+    </tr>
+    <tr>
+      <td><b>Last Name</b></td>
+      <td>${users.person.lastName}</td>
       <td><a href="">Change</a></td>
     </tr>
     <tr>
@@ -16,7 +21,17 @@
     </tr>
     <tr>
       <td><b>E-mail</b></td>
-      <td>${users.email.infoString}</td>
+      <td><span repeat.for="email of users.email">${email.infoString}<br></span></td>
+      <td><a href="">Change</a> </td>
+    </tr>
+    <tr>
+      <td><b>Address</b></td>
+      <td><span repeat.for="address of users.address">${address.address1}<br></span></td>
+      <td><a href="">Change</a> </td>
+    </tr>
+    <tr>
+      <td><b>Telephone</b></td>
+      <td><span repeat.for="telephone of users.telephone">${telephone.contactNumber}<br></span></td>
       <td><a href="">Change</a> </td>
     </tr>
     <tr>
