@@ -10,7 +10,7 @@ export class UserService {
 
     this.client.configure(config => {
       config.withBaseUrl(baseUrl)
-        .withDefaults({
+          .withDefaults({
           mode: 'cors',
           headers: {
             'Accept': 'application/json'
