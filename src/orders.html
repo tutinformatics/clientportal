@@ -1,3 +1,59 @@
 <template>
-    Orders
+  <h1>My orders</h1>
+  <table class="ui fixed table">
+    <thead>
+    <tr><th>Order #</th>
+      <th>Product name</th>
+      <th>Type</th>
+      <th>Date</th>
+      <th>Total</th>
+      <th>Details</th>
+    </tr></thead>
+    <tbody>
+    <tr>
+      <td>1</td>
+      <td>Helpful product</td>
+      <td>Template</td>
+      <td>19.04.2020</td>
+      <td>37€</td>
+      <td><div class="ui container">
+        <button class="modal-btn ui primary button">Details</button>
+      </div>
+        <div class="ui modal top-aligned-modal">
+          <div class="header">Invoice details</div>
+          <div class="content">
+            <p>Testing modal</p>
+          </div>
+        </div>
+        <div class="ui modal test-modal">
+          <div class="header">Header</div>
+          <div class="content">
+            <p>Testing modal</p>
+          </div>
+        </div></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Helpful product vol2</td>
+      <td>Database</td>
+      <td>20.04.2020</td>
+      <td>45€</td>
+      <td><div class="ui container">
+        <button class="modal-btn ui primary button">Details</button>
+      </div>
+        <div class="ui modal top-aligned-modal">
+          <div class="header">Order details</div>
+          <div class="content">
+            <p>Testing modal</p>
+          </div>
+        </div>
+        <div class="ui modal test-modal">
+          <div class="header">Header</div>
+          <div class="content">
+            <p>Testing modal</p>
+          </div>
+        </div></td>
+    </tr>
+    </tbody>
+  </table>
 </template>
