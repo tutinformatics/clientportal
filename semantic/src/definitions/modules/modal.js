@@ -23,7 +23,7 @@ window = (typeof window != 'undefined' && window.Math == Math)
     : Function('return this')()
 ;
 
-$.fn.modal = function(parameters) {
+$.fn.suimodal = function(parameters) {
   var
     $allModules    = $(this),
     $window        = $(window),
@@ -52,8 +52,8 @@ $.fn.modal = function(parameters) {
     .each(function() {
       var
         settings    = ( $.isPlainObject(parameters) )
-          ? $.extend(true, {}, $.fn.modal.settings, parameters)
-          : $.extend({}, $.fn.modal.settings),
+          ? $.extend(true, {}, $.fn.suimodal.settings, parameters)
+          : $.extend({}, $.fn.suimodal.settings),
 
         selector        = settings.selector,
         className       = settings.className,
@@ -113,7 +113,7 @@ $.fn.modal = function(parameters) {
         },
 
         instantiate: function() {
-          module.verbose('Storing instance of modal');
+          module.verbose('Storing instance of suimodal');
           instance = module;
           $module
             .data(moduleNamespace, instance)
@@ -160,7 +160,7 @@ $.fn.modal = function(parameters) {
           if (observer) {
             observer.disconnect();
           }
-          module.verbose('Destroying previous modal');
+          module.verbose('Destroying previous suimodal');
           $module
             .removeData(moduleNamespace)
             .off(eventNamespace)
@@ -196,7 +196,7 @@ $.fn.modal = function(parameters) {
         },
 
         refreshModals: function() {
-          $otherModals = $module.siblings(selector.modal);
+          $otherModals = $module.siblings(selector.suimodal);
           $allModals   = $otherModals.add($module);
         },
 
@@ -209,7 +209,7 @@ $.fn.modal = function(parameters) {
             : module.toggle
           ;
           if($toggle.length > 0) {
-            module.debug('Attaching modal events to element', selector, event);
+            module.debug('Attaching suimodal events to element', selector, event);
             $toggle
               .off(eventNamespace)
               .on('click' + eventNamespace, event)
@@ -284,9 +284,9 @@ $.fn.modal = function(parameters) {
               $target   = $(event.target),
               isRtl = module.is.rtl();
             ;
-            initialMouseDownInModal = ($target.closest(selector.modal).length > 0);
+            initialMouseDownInModal = ($target.closest(selector.suimodal).length > 0);
             if(initialMouseDownInModal) {
-              module.verbose('Mouse down event registered inside the modal');
+              module.verbose('Mouse down event registered inside the suimodal');
             }
             initialMouseDownInScrollbar = module.is.scrolling() && ((!isRtl && $(window).outerWidth() - settings.scrollbarWidth <= event.clientX) || (isRtl && settings.scrollbarWidth >= event.clientX));
             if(initialMouseDownInScrollbar) {
@@ -299,7 +299,7 @@ $.fn.modal = function(parameters) {
               return;
             }
             if(initialMouseDownInModal) {
-              module.debug('Dimmer clicked but mouse down was initially registered inside the modal');
+              module.debug('Dimmer clicked but mouse down was initially registered inside the suimodal');
               return;
             }
             if(initialMouseDownInScrollbar){
@@ -308,7 +308,7 @@ $.fn.modal = function(parameters) {
             }
             var
               $target   = $(event.target),
-              isInModal = ($target.closest(selector.modal).length > 0),
+              isInModal = ($target.closest(selector.suimodal).length > 0),
               isInDOM   = $.contains(document.documentElement, event.target)
             ;
             if(!isInModal && isInDOM && module.is.active() && $module.hasClass(className.front) ) {
@@ -335,7 +335,7 @@ $.fn.modal = function(parameters) {
             ;
             if(keyCode == escapeKey) {
               if(settings.closable) {
-                module.debug('Escape key pressed hiding modal');
+                module.debug('Escape key pressed hiding suimodal');
                 if ( $module.hasClass(className.front) ) {
                   module.hide();
                 }
@@ -398,7 +398,7 @@ $.fn.modal = function(parameters) {
             else {
               module.set.legacy();
               module.set.modalOffset();
-              module.debug('Using non-flex legacy modal positioning.');
+              module.debug('Using non-flex legacy suimodal positioning.');
             }
             module.set.screenHeight();
             module.set.type();
@@ -420,7 +420,7 @@ $.fn.modal = function(parameters) {
               }
               settings.onShow.call(element);
               if(settings.transition && $.fn.transition !== undefined && $module.transition('is supported')) {
-                module.debug('Showing modal with css animations');
+                module.debug('Showing suimodal with css animations');
                 $module
                   .transition({
                     debug       : settings.debug,
@@ -461,7 +461,7 @@ $.fn.modal = function(parameters) {
             ? callback
             : function(){}
           ;
-          module.debug('Hiding modal');
+          module.debug('Hiding suimodal');
           if(settings.onHide.call(element, $(this)) === false) {
             module.verbose('Hide callback returned false cancelling hide');
             ignoreRepeatedEvents = false;
@@ -550,10 +550,10 @@ $.fn.modal = function(parameters) {
           if( $visibleModals.length > 0 ) {
             module.debug('Hiding all visible modals');
             var hideOk = true;
-//check in reverse order trying to hide most top displayed modal first
+//check in reverse order trying to hide most top displayed suimodal first
             $($visibleModals.get().reverse()).each(function(index,element){
                 if(hideOk){
-                    hideOk = $(element).modal('hide modal', callback, false, true);
+                    hideOk = $(element).suimodal('hide suimodal', callback, false, true);
                 }
             });
             if(hideOk) {
@@ -574,7 +574,7 @@ $.fn.modal = function(parameters) {
           if( $visibleModals.length > 0 ) {
             module.debug('Hiding other modals', $otherModals);
             $visibleModals
-              .modal('hide modal', callback, true)
+              .suimodal('hide suimodal', callback, true)
             ;
           }
         },
@@ -697,7 +697,7 @@ $.fn.modal = function(parameters) {
             module.cache.topOffset = -(module.cache.height / 2);
           }
           $module.removeClass(className.loading);
-          module.debug('Caching modal and container sizes', module.cache);
+          module.debug('Caching suimodal and container sizes', module.cache);
         },
 
         can: {
@@ -889,7 +889,7 @@ $.fn.modal = function(parameters) {
                 }) 
               ;
             }
-            module.verbose('Setting modal offset for legacy mode');
+            module.verbose('Setting suimodal offset for legacy mode');
           },
           screenHeight: function() {
             if( module.can.fit() ) {
@@ -926,7 +926,7 @@ $.fn.modal = function(parameters) {
               module.verbose('Modal cannot fit on screen setting to scrolling');
               module.set.scrolling();
             } else {
-                module.verbose('Bottom aligned modal not fitting on screen is unsupported for scrolling');
+                module.verbose('Bottom aligned suimodal not fitting on screen is unsupported for scrolling');
             }
           },
           undetached: function() {
@@ -1117,10 +1117,10 @@ $.fn.modal = function(parameters) {
   ;
 };
 
-$.fn.modal.settings = {
+$.fn.suimodal.settings = {
 
   name           : 'Modal',
-  namespace      : 'modal',
+  namespace      : 'suimodal',
 
   useFlex        : 'auto',
   offset         : 0,
@@ -1183,7 +1183,7 @@ $.fn.modal.settings = {
     close    : '> .close',
     approve  : '.actions .positive, .actions .approve, .actions .ok',
     deny     : '.actions .negative, .actions .deny, .actions .cancel',
-    modal    : '.ui.modal',
+    suimodal    : '.ui.suimodal',
     dimmer   : '> .ui.dimmer',
     bodyFixed: '> .ui.fixed.menu, > .ui.right.toast-container, > .ui.right.sidebar'
   },
