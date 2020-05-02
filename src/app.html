@@ -65,7 +65,7 @@
     <div class="ui simple dropdown item">
       User <i class="dropdown icon"></i>
       <div class="menu">
-        <a class="item" href="#">Settings</a>
+        <a class="item" href="#user">Settings</a>
         <div class="divider"></div>
         <!-- <div class="header">Header Item</div> -->
         <a class="item" href="#">Sign out</a>
@@ -75,7 +75,7 @@
 
   <div class="ui left demo vertical inverted sidebar visible labeled icon menu">
       <a class="item ${nav.isActive ? 'active' : ''}" route-href.bind="nav.name" repeat.for="nav of router.routes">
-        <i class="${nav.settings.data} icon"></i>
+        <i class="${nav.settings.data}"></i>
         ${ nav.title }
       </a>
   </div>
