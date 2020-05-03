@@ -7,7 +7,7 @@ const noExpirationToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJ1c2VyTG9naW5J
 
 @autoinject
 export class OrderService {
-    baseUrl = 'http://flowerstore.ee:8443/api/generic/v1/';
+    baseUrl = 'https://flowerstore.ee:8443/api/generic/v1/';
 
     constructor() {
         this.client = new HttpClient();
