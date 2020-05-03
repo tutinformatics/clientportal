@@ -1,4 +1,4 @@
-import { UserService } from './user-service';
+import { UserService } from '../../_services/user-service';
 
 export class User {
     constructor() {
