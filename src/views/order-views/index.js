@@ -7,5 +7,6 @@ export class Index {
 
     async attached() {
         this.orders = await this.orderService.getOrders();
+        console.log(this.orders);
     }
 }
