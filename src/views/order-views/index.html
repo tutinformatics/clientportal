@@ -3,16 +3,16 @@
 </br>
   <table class="ui celled padded table">
     <thead>
-    <tr><th class="single line">Order number</th>
-      <th>Name</th>
-      <th>Efficacy</th>
-      <th>Consensus</th>
-      <th>Comments</th>
+    <tr><th class="single line">Order ID</th>
+      <th>Item Description</th>
+      <th>Quantity</th>
+      <th>Unit Price</th>
+      <th>Created</th>
     </tr></thead>
     <tbody>
-    <tr>
+    <tr repeat.for="order of orders">
       <td>
-        <p class="ui center aligned header">1</p>
+        <p class="ui center aligned header">${order.orderId}</p>
       </td>
       <td class="single line">
         Ofbiz
@@ -25,81 +25,7 @@
       </td>
       <td>Creatine supplementation is the reference compound for increasing muscular creatine levels; there is variability in this increase, however, with some nonresponders.</td>
     </tr>
-    <tr>
-      <td>
-        <p class="ui center aligned header">2</p>
-      </td>
-      <td class="single line">
-        Good product 2
-      </td>
-      <td>
-        <div class="ui yellow rating" data-rating="3" data-max-rating="3"></div>
-      </td>
-      <td class="right aligned">
-        100%
-      </td>
-      <td>Creatine is the reference compound for power improvement, with numbers from one meta-analysis to assess potency</td>
-    </tr>
-    <tr>
-      <td>
-        <p class="ui center aligned header">3</p>
-      </td>
-      <td class="single line">
-        Good product 3
-      </td>
-      <td>
-        <div class="ui yellow rating" data-rating="3" data-max-rating="3"></div>
-      </td>
-      <td class="right aligned">
-        100%
-      </td>
-      <td>Creatine is the reference compound for power improvement, with numbers from one meta-analysis to assess potency</td>
-    </tr>
-    <tr>
-      <td>
-        <p class="ui center aligned header">4</p>
-      </td>
-      <td class="single line">
-        Good product 4
-      </td>
-      <td>
-        <div class="ui yellow rating" data-rating="3" data-max-rating="3"></div>
-      </td>
-      <td class="right aligned">
-        100%
-      </td>
-      <td>Creatine is the reference compound for power improvement, with numbers from one meta-analysis to assess potency</td>
-    </tr>
-    <tr>
-      <td>
-        <p class="ui center aligned header">5</p>
-      </td>
-      <td class="single line">
-        Good product 5
-      </td>
-      <td>
-        <div class="ui yellow rating" data-rating="3" data-max-rating="3"></div>
-      </td>
-      <td class="right aligned">
-        100%
-      </td>
-      <td>Creatine is the reference compound for power improvement, with numbers from one meta-analysis to assess potency</td>
-    </tr>
-    <tr>
-      <td>
-        <p class="ui center aligned header">6</p>
-      </td>
-      <td class="single line">
-        Good product 6
-      </td>
-      <td>
-        <div class="ui yellow rating" data-rating="3" data-max-rating="3"></div>
-      </td>
-      <td class="right aligned">
-        100%
-      </td>
-      <td>Creatine is the reference compound for power improvement, with numbers from one meta-analysis to assess potency</td>
-    </tr>
+
     </tbody>
     <tfoot>
     <tr><th colspan="5">
