@@ -1,4 +1,4 @@
-import { HttpClient, json } from "aurelia-fetch-client";
+import { HttpClient } from "aurelia-fetch-client";
 import { autoinject } from 'aurelia-framework';
 
 
@@ -7,7 +7,7 @@ const noExpirationToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJ1c2VyTG9naW5J
 
 @autoinject
 export class InvoiceService {
-    baseUrl = 'http://client.flowerstore.ee/api/generic/v1/';
+    baseUrl = "api/generic/v1/";
 
     constructor() {
         this.client = new HttpClient();
@@ -36,7 +36,7 @@ export class InvoiceService {
 
     getInvoices() {
         return this.client
-        .fetch(`${this.baseUrl}entities/Invoice`)
+        .fetch("entities/Invoice")
         .then(response => response.json())
         .catch(reason => {
             console.error(reason);
