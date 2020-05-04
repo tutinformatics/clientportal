@@ -15,15 +15,17 @@
         <p class="ui center aligned header">${order.orderId}</p>
       </td>
       <td class="single line">
-        Ofbiz
+        ${order.itemDescription}
       </td>
-      <td>
-        <div class="ui yellow rating" data-rating="3" data-max-rating="3"></div>
+      <td class="single line">
+        ${order.quantity}  
       </td>
       <td class="right aligned">
-        80%
+        ${order.unitPrice}
       </td>
-      <td>Creatine supplementation is the reference compound for increasing muscular creatine levels; there is variability in this increase, however, with some nonresponders.</td>
+      <td>
+        ${new Date(order.createdStamp)}
+      </td>
     </tr>
 
     </tbody>
