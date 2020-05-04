@@ -1,29 +1,30 @@
 <template>
-  <h1>Offers</h1>
-  <div class="ui three column grid">
-    <div class="column">
-      <div class="ui segment">
-        <img src="/images/ok.png" alt="ok" height="320" width="320">
-        <h3>Helpful product</h3>
-        <p>45€</p>
-        <button class="ui primary button">Look</button><i class="heart outline icon"></i>
-      </div>
-    </div>
-    <div class="column">
-      <div class="ui segment">
-        <img src="/images/ok.png" alt="ok" height="320" width="320">
-        <h3>Helpful product vol2</h3>
-        <p>55€</p>
-        <button class="ui primary button">Look</button><i class="heart outline icon"></i>
-      </div>
-    </div>
-    <div class="column">
-      <div class="ui segment">
-        <img src="/images/ok.png" alt="ok" height="320" width="320">
-        <h3>Helpful product vol3</h3>
-        <p>65€</p>
-        <button class="ui primary button">Look</button><i class="heart outline icon"></i>
-      </div>
-    </div>
-  </div>
+  <h1>Quotes</h1>
+  </br>
+  <table class="ui celled padded table">
+    <thead>
+    <tr><th class="single line">Quote ID</th>
+      <th>Quote Unit Price</th>
+      <th>Quantity</th>
+      <th>Comment</th>
+    </tr></thead>
+    <tbody>
+    <tr repeat.for="quote of quotes">
+      <td>
+        <p class="ui center aligned header">${quote.quoteId}</p>
+      </td>
+      <td class="single line">
+        ${quote.unitPrice}
+      </td>
+      <td class="single line">
+        ${quote.quantity}  
+      </td>
+      <td class="right aligned">
+        ${quote.comment}
+      </td>
+    </tr>
+
+    </tbody>
+
+  </table>
 </template>
