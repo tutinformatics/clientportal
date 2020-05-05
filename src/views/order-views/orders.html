@@ -11,7 +11,7 @@
     <tbody>
     <tr repeat.for="order of orders">
       <td>
-        <p class="ui center aligned header">${order.orderId}</p>
+        <p class="ui center aligned header"><a route-href="route: orderDetail; params.bind: {id: order.orderId}">${order.orderId}</a></p>
       </td>
       <td class="single line">
         ${order.itemDescription}

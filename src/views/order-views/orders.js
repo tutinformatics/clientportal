@@ -1,6 +1,6 @@
 import { OrderService } from '../../_services/order-service';
 
-export class Index {
+export class Orders {
     constructor() {
         this.orderService = new OrderService();
     }

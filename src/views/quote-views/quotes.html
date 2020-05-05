@@ -11,7 +11,7 @@
     <tbody>
     <tr repeat.for="quote of quotes">
       <td>
-        <p class="ui center aligned header">${quote.quoteId}</p>
+        <p class="ui center aligned header"><a route-href="route: quoteDetail; params.bind: {id: quote.quoteId}">${quote.quoteId}</a></p>
       </td>
       <td class="single line">
         ${quote.quoteUnitPrice}

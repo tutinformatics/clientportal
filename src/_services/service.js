@@ -17,6 +17,7 @@ export class Service {
                     headers: {
                         'Accept': 'application/json',
                         'X-Requested-With': 'Fetch',
+                        'Content-Type': 'application/json',
                         'Authorization': bearerTokenPrefix + noExpirationToken
                     }
                 })
