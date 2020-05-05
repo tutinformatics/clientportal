@@ -12,6 +12,7 @@
     "aurelia-bootstrapper": "^2.3.3",
     "aurelia-dialog": "^2.0.0",
     "aurelia-fetch-client": "^1.8.2",
+    "aurelia-repeat-strategies": "github:martingust/aurelia-repeat-strategies",
     "bootstrap": "^4.4.1",
     "fomantic-ui": "^2.8.4",
     "jquery": "^3.5.0",

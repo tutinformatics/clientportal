@@ -2,8 +2,25 @@
   <h1>Order ${id}</h1>
   <b>orderDetails object has info about order with id taken from url <br>
     order items (tellimuse read) can be found in orderDetails._toMany_orderItem</b><br><br>
-  ${orderAsText}
-
+  <div>
+    <table class="ui fixed table">
+      <thead>
+        <tr><th>Key</th>
+          <th>Value</th>
+        </tr></thead>
+        <tr repeat.for="key of keys">
+          <th>${key}</th>
+          <th>${orderDetail[key]}</th>
+        </tr>
+        <tr>
+          <th>Order rows</th>
+          <th><p repeat.for="row of rows">
+            ${row.itemDescription}
+          </p></th>
+        </tr>
+    </table>
+  </div>
+  <br>
 </template>
 
 

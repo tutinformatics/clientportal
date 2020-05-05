@@ -2,5 +2,23 @@
   <h1>Quote ${id}</h1>
   <b>quoteDetails object has info about quote with id taken from url <br>
     quote items (read) can be found in quoteDetails._toMany_QuoteItem</b><br><br>
-  ${quoteAsText}
+    <div>
+      <table class="ui fixed table">
+        <thead>
+          <tr><th>Key</th>
+            <th>Value</th>
+          </tr></thead>
+          <tr repeat.for="key of keys">
+            <th>${key}</th>
+            <th>${quoteDetail[key]}</th>
+          </tr>
+          <tr>
+            <th>Quote rows</th>
+            <th><p repeat.for="row of rows">
+              ${row}
+            </p></th>
+          </tr>
+      </table>
+    </div>
+    <br>
 </template>

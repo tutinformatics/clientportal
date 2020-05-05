@@ -2,5 +2,23 @@
   <h1>Invoice ${id}</h1>
   <b>invoiceDetails object has info about invoice with id taken from url <br>
     invoice items (arveread) can be found in invoiceDetails._toMany_InvoiceItem</b><br><br>
-  ${invoiceAsText}
+  <div>
+    <table class="ui fixed table">
+      <thead>
+        <tr><th>Key</th>
+          <th>Value</th>
+        </tr></thead>
+        <tr repeat.for="key of keys">
+          <th>${key}</th>
+          <th>${invoiceDetail[key]}</th>
+        </tr>
+        <tr>
+          <th>Invoice rows</th>
+          <th><p repeat.for="row of rows">
+            ${row.description}
+          </p></th>
+        </tr>
+    </table>
+  </div>
+  <br>
 </template>
