@@ -42,8 +42,7 @@ export class Service {
     return this.client.fetch(url, {
         method: "post",
         body: JSON.stringify(body)
-      })
-      .then(response => response.json())
+      }).then(response => response.json())
       .catch(reason => {
         console.error(reason);
         return [];
@@ -51,11 +50,10 @@ export class Service {
   }
 
   service(name, body = {}) {
-    return this.client.fetch(url, {
+    return this.client.fetch("services/" + name, {
       method: "post",
       body: JSON.stringify(Object.assign(body, {"userLogin": userLogin}))
-    })
-      .then(response => response.json())
+    }).then(response => response.json())
       .catch(reason => {
         console.error(reason);
         return [];

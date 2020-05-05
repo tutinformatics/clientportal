@@ -1,31 +1,13 @@
-import { HttpClient } from 'aurelia-fetch-client';
-import { inject } from 'aurelia-framework';
+import { autoinject } from 'aurelia-framework';
+import {Service} from "./service";
 
-@inject(HttpClient)
-export class UserService {
-  constructor() {
-    this.client = new HttpClient;
-
-    const baseUrl = 'http://161.35.21.253:4567/api/';
-
-    this.client.configure(config => {
-      config.withBaseUrl(baseUrl)
-          .withDefaults({
-          mode: 'cors',
-          headers: {
-            'Accept': 'application/json'
-          }
-        });
-    })
+@autoinject
+export class UserService extends Service {
+  getContactData() {
+    return this.service("getPartyContactMechValueMaps", {"partyId": "DemoCustomer"})
   }
 
-  async getUser() {
-    try {
-      const response = await this.client.fetch('contact');
-      console.log(response);
-      return response.json();
-    } catch (e) {
-      console.log("User:", e);
-    }
+  getPersonData() {
+    return this.service("getPerson", {"partyId": "DemoCustomer"});
   }
 }
