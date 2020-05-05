@@ -7,10 +7,17 @@ export class OrderService extends Service {
     return this.get("entities/OrderHeader");
   }
 
-  getOrderDetails(id) {
+  getCustomerOrders() {
     return this.post("entityquery/OrderHeader", {
-      "inputFields": {"orderId": id},
-      "entityRelations": {"_toMany_OrderItem": {}}
-    })
+      "areRelationResultsMandatory": true,
+      "entityRelations": {
+        "_toOne_OrderRole": {
+          "inputFields" : {
+            "partyId": "DemoCustomer"
+          }
+        }
+      }
+    });
   }
+
 }

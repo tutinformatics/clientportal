@@ -6,7 +6,7 @@ export class Orders {
     }
 
     async attached() {
-        this.orders = await this.orderService.getOrders();
+        this.orders = await this.orderService.getCustomerOrders();
         console.log(this.orders);
     }
 }

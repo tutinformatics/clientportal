@@ -4,7 +4,7 @@ import {Service} from "./service";
 @autoinject
 export class InvoiceService extends Service {
   getInvoices() {
-    return this.get("entities/Invoice");
+    return this.get("entities/Invoice?partyId=DemoCustomer");
   }
 
   getInvoiceDetails(id) {
