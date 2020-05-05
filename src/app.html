@@ -79,7 +79,7 @@
   </div>
 
   <div class="ui left demo vertical inverted sidebar visible labeled icon menu">
-      <a class="item ${nav.isActive ? 'active' : ''}" route-href.bind="nav.name" repeat.for="nav of router.routes">
+      <a class="item ${nav.isActive ? 'active' : ''}" route-href.bind="nav.name" repeat.for="nav of navItems">
         <i class="${nav.settings.data} icon"></i>
         ${ nav.title }
       </a>

@@ -4,7 +4,15 @@ import { PLATFORM } from "aurelia-framework";
 
 export class App {
   constructor() {
-
+    this.navItems = [
+      {name: 'index', title:'OFBiz', settings: {data: 'java'}},
+      {name: 'cart', title: 'Cart', settings: {data: 'shopping cart icon'}},
+      {name: 'quotes', title: 'Quotes', settings: {data: 'fire alternate icon'}},
+      {name: 'orders', title: 'Orders', settings: {data: 'box icon'}},
+      {name: 'invoices', title: 'Invoices', settings: {data: 'file alternate outline icon'}},
+      {name: 'favorites', title: 'Favorites', settings: {data: 'star outline'}},
+      {name: 'user-settings', title: 'Settings', settings: {data: 'user cog'}}
+    ]
   }
   configureRouter(config, router) {
     this.router = router;
