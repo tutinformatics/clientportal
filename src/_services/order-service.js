@@ -20,4 +20,11 @@ export class OrderService extends Service {
     });
   }
 
+  getOrderDetails(id) {
+    return this.post("entityquery/OrderHeader",{
+      "inputFields" : { "orderId": id },
+      "entityRelations": { "_toMany_OrderItem": {} }
+    })
+  }
+
 }
