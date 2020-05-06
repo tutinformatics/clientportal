@@ -9,12 +9,18 @@ export class User {
   async attached() {
     this.contactData = await this.userService.getContactData();
     this.personData = await this.userService.getPersonData();
-    // TODO Remove below lines
-    console.log("Contact Data:")
-    console.log(this.contactData);
-    console.log("Person Data:")
-    console.log(this.personData)
-    this.tempData = JSON.stringify(this.contactData);
-    this.tempData2 = JSON.stringify(this.personData);
+    this.addresses = this.getMechsByType(this.contactData.valueMaps, "POSTAL_ADDRESS");
+    this.emails = this.getMechsByType(this.contactData.valueMaps, "EMAIL_ADDRESS");
+    this.phoneNumbers = this.getMechsByType(this.contactData.valueMaps, "TELECOM_NUMBER");
+  }
+
+  getMechsByType(mechs, type) {
+    var result = [];
+    for (let i = 0; i < mechs.length; i++) {
+      if (mechs[i].contactMech.contactMechTypeId === type) {
+        result.push(mechs[i])
+      }
+    }
+    return result;
   }
 }
