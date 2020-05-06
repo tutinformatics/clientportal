@@ -1,13 +1,11 @@
 <template>
-  <h1>My invoices</h1>
+  <h2>My invoices</h2>
   <table class="ui fixed table">
     <thead>
     <tr><th>Invoice ID</th>
       <th>Invoice Type ID</th>
       <th>Status ID</th>
       <th>Invoice Date</th>
-      <th>Due Date</th>
-      <th>Description</th>
     </tr></thead>
     <tbody>
     <tr repeat.for="invoice of invoices">
@@ -15,8 +13,6 @@
       <td>${invoice.invoiceTypeId}</td>
       <td>${invoice.statusId}</td>
       <td>${invoice.invoiceDate}</td>
-      <td>${invoice.dueDate}</td>
-      <td>${invoice.description}</td>
     </tr>
     </tbody>
   </table>

@@ -1,11 +1,9 @@
 <template>
-  <h1>Quotes</h1>
-  </br>
+  <h2>Quotes</h2>
   <table class="ui celled padded table">
     <thead>
     <tr><th class="single line">Quote ID</th>
-      <th>Quote Unit Price</th>
-      <th>Quantity</th>
+      <th>Issue Date</th>
       <th>Comment</th>
     </tr></thead>
     <tbody>
@@ -14,13 +12,10 @@
         <p class="ui center aligned header"><a route-href="route: quoteDetail; params.bind: {id: quote.quoteId}">${quote.quoteId}</a></p>
       </td>
       <td class="single line">
-        ${quote.quoteUnitPrice}
+        ${quote.issueDate}
       </td>
       <td class="single line">
-        ${quote.quantity}  
-      </td>
-      <td class="single line">
-        ${quote.comments}
+        ${quote.quoteName}
       </td>
     </tr>
     </tbody>
