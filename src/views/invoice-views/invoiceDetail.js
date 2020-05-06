@@ -9,10 +9,11 @@ export class Invoices {
   async attached() {
     this.invoiceDetails = await this.invoiceService.getInvoiceDetails(this.id);
     console.log(this.invoiceDetails[0]);
+
+    this.rows = this.invoiceDetails[0]._toMany_InvoiceItem
     this.invoiceDetail = this.removeEmptyRows(this.invoiceDetails[0])
     this.keys = Object.keys(this.invoiceDetail)
 
-    this.rows = this.invoiceDetail._toMany_InvoiceItem
     console.log(this.rows)
   }
 
@@ -28,7 +29,7 @@ export class Invoices {
       if (val) {
         if (keys[i].toString().includes("Stamp") || keys[i].toString().includes("Date")) {
           result[keys[i]] = new Date(val).toLocaleString();
-        } else {
+        } else if (!keys[i].toString().includes("toMany")) {
           result[keys[i]] = val
         }
       }
