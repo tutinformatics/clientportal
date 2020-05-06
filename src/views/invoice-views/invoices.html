@@ -9,7 +9,7 @@
     </tr></thead>
     <tbody>
     <tr repeat.for="invoice of invoices">
-      <td><a route-href="route: invoiceDetail; params.bind: {id: invoice.invoiceId}">${invoice.invoiceId}</a></td>
+      <td><p class="ui center aligned header"><a route-href="route: invoiceDetail; params.bind: {id: invoice.invoiceId}">${invoice.invoiceId}</a></p></td>
       <td>${invoice.invoiceTypeId}</td>
       <td>${invoice.statusId}</td>
       <td>${invoice.invoiceDate}</td>
