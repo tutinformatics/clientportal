@@ -1,0 +1,24 @@
+<template>
+  <h1>Order ${id}</h1>
+  <div>
+    <table class="ui fixed table">
+      <thead>
+        <tr><th>Key</th>
+          <th>Value</th>
+        </tr></thead>
+        <tr repeat.for="key of keys">
+          <th>${key}</th>
+          <th>${orderDetail[key]}</th>
+        </tr>
+        <tr>
+          <th>Order rows</th>
+          <th><p repeat.for="row of rows">
+            ${row.itemDescription}
+          </p></th>
+        </tr>
+    </table>
+  </div>
+  <br>
+</template>
+
+

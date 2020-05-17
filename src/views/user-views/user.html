@@ -1,0 +1,49 @@
+<template>
+  <h2>Basic user settings</h2>
+  <br>
+  <table class="ui celled table">
+    <tbody>
+    <tr>
+      <td><b>First Name</b></td>
+      <td>${personData.lookupPerson.firstName}</td>
+      <td><a href="#">Change</a></td>
+    </tr>
+    <tr>
+      <td><b>Last Name</b></td>
+      <td>${personData.lookupPerson.lastName}</td>
+      <td><a href="#">Change</a></td>
+    </tr>
+    <tr>
+      <td><b>Username</b></td>
+      <td>${personData.lookupPerson.partyId}</td>
+      <td><a href="#">Change</a> </td>
+    </tr>
+    <tr>
+      <td><b>E-mail</b></td>
+      <td><span repeat.for="email of emails">${email.contactMech.infoString}<br></span></td>
+      <td><a href="#">Change</a> </td>
+    </tr>
+    <tr>
+      <td><b>Address</b></td>
+      <td><span repeat.for="address of addresses">${address.postalAddress.address1}, ${address.postalAddress.city}<br></span></td>
+      <td><a href="#">Change</a> </td>
+    </tr>
+    <tr>
+      <td><b>Telephone</b></td>
+      <td><span repeat.for="phone of phoneNumbers">+${phone.telecomNumber.countryCode}-${phone.telecomNumber.areaCode}-${phone.telecomNumber.contactNumber}<br></span></td>
+      <td><a href="#">Change</a> </td>
+    </tr>
+    <tr>
+      <td><b>Pending orders</b></td>
+      <td>16</td>
+      <td><a href=#>Show</a></td>
+    </tr>
+    <tr>
+      <td><b>Purchases</b></td>
+      <td>2</td>
+      <td><a href="#">Show</a></td>
+    </tr>
+    </tbody>
+  </table>
+  
+</template>

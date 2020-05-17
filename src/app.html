@@ -1,0 +1,94 @@
+<template>
+  <require from="fomantic-ui/semantic.min.css"></require>
+
+  <style type="text/css">
+    body {
+      background-color: #FFFFFF;
+    }
+    .ui.menu .item img.logo {
+      margin-right: 1.5em;
+    }
+    .ui.fixed.inverted.menu{
+      margin-left: 6em;
+    }
+    .right.inverted.menu {
+      margin-right: 6em;
+    }
+    .main.container {
+      margin-top: 7em;
+    }
+    .wireframe {
+      margin-top: 2em;
+    }
+    .ui.footer.segment {
+      margin: 5em 0em 0em;
+      padding: 5em 0em;
+    }
+    h2 {
+      margin-left: -200px;
+    }
+    h1 {
+      margin-left: -200px;
+    }
+    .ui.table {
+      margin-left: -200px;
+    }
+    .ui.grid {
+      margin-left: -200px;
+    }
+    .ui.inverted.segment {
+      margin-left: -200px;
+      margin-right: 300px;
+    }
+    .ui.cards {
+      margin-left: -200px;
+    }
+    .ui.checkbox {
+      margin-top: 90px;
+    }
+    .ui.horizontal.card {
+      width: 600px;
+    }
+    .tabs {
+      margin-left: -200px;
+    }
+    .ui.three.column.grid {
+      margin-left: -215px
+    }
+    .ui.segment {
+      margin-right: 70px;
+    }
+  </style>
+
+  <div class="ui fixed inverted menu">
+    <a href="#" class="header item">
+      Services
+    </a>
+    <div class="right inverted menu">
+      <div class="ui simple dropdown item">
+      <i class="user icon"></i>
+      DemoCustomer
+      <i class="dropdown icon"></i>
+      <div class="menu">
+        <a class="item" href="#user">Settings</a>
+        <div class="divider"></div>
+        <a class="item" href="#">Log out</a>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="ui left demo vertical inverted sidebar visible labeled icon menu">
+      <a class="item ${nav.isActive ? 'active' : ''}" route-href.bind="nav.name" repeat.for="nav of navItems">
+        <i class="${nav.settings.data} icon"></i>
+        ${ nav.title }
+      </a>
+  </div>
+
+  <div class="pusher">
+    <div class="ui main container">
+      <router-view></router-view>
+    </div>
+  </div>
+
+</template>

@@ -1,0 +1,23 @@
+<template>
+  <h2>Quotes</h2>
+  <table class="ui celled padded table">
+    <thead>
+    <tr><th class="single line">Quote ID</th>
+      <th>Issue Date</th>
+      <th>Comment</th>
+    </tr></thead>
+    <tbody>
+    <tr repeat.for="quote of quotes">
+      <td>
+        <p class="ui center aligned header"><a route-href="route: quoteDetail; params.bind: {id: quote.quoteId}">${quote.quoteId}</a></p>
+      </td>
+      <td class="single line">
+        ${quote.issueDate}
+      </td>
+      <td class="single line">
+        ${quote.quoteName}
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</template>

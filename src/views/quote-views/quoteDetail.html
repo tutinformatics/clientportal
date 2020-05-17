@@ -1,0 +1,22 @@
+<template>
+  <h1>Quote ${id}</h1>
+    <div>
+      <table class="ui fixed table">
+        <thead>
+          <tr><th>Key</th>
+            <th>Value</th>
+          </tr></thead>
+          <tr repeat.for="key of keys">
+            <th>${key}</th>
+            <th>${quoteDetail[key]}</th>
+          </tr>
+          <tr>
+            <th>Quote rows</th>
+            <th><p repeat.for="row of rows">
+              ${row.productId}
+            </p></th>
+          </tr>
+      </table>
+    </div>
+    <br>
+</template>
